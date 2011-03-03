@@ -170,9 +170,7 @@ function writeCommenterGreeting(commenter_name, entry_id, blog_id, commenter_id,
         }
         content += '. Now you can comment. (<a href="<$MTRemoteSignOutLink static="1"$>&entry_id=' + entry_id + '">sign out</a>)';
         document.write(content);
-<MTIfUserProfilesPro>
         getImage();
-</MTIfUserProfilesPro>
     } else if (commenter_name) {
             document.write('You do not have permission to comment on this blog. (<a href="<$MTRemoteSignOutLink static="1"$>&entry_id=' + entry_id + '">sign out</a>)');
     } else {
@@ -184,8 +182,6 @@ function writeCommenterGreeting(commenter_name, entry_id, blog_id, commenter_id,
     }
 </MTIfRegistrationAllowed>
 }
-
-<MTIfUserProfilesPro>
 
 function getImage(){
 
@@ -221,7 +217,6 @@ var callback =
   var request = YAHOO.util.Connect.asyncRequest('POST', sUrl, callback, postData);
   return false;
 }
-</MTIfUserProfilesPro>
 
 <MTIfRegistrationAllowed>
 if ('<$MTCGIHost exclude_port="1"$>' != '<$MTBlogHost exclude_port="1"$>') {
